@@ -1,6 +1,12 @@
 # Rime 工作流
 ---
 ### Info
+
+![Alfrime](alfrime.png)
+
+图标来自[la rime](https://github.com/rime/librime)以及[Alfred](https://www.alfredapp.com)
+脚本依赖于[pypinyin](https://github.com/mozillazg/python-pinyin)
+
 Rime tool for Alfred
 请注意~~一定~~要安装`pypinyin`，以及`custom_phrase.txt`尾部留有**空行**
 ~~不要一次使用太多的重新部署，部署过程需要时间，如果在此时间内运行重新部署~~
