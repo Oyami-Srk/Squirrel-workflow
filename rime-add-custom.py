@@ -5,10 +5,20 @@
 # /usr/bin/python -m pip install pypinyin
 # 此脚本应用于自然码, 或者可以通过修改码表来实现其他双拼
 # 使用此脚本前请确保custom phrase文件尾部有空行
+IsCodeReformating = True # 修改为False关闭三字词转换，修改为True开启三字词转换
 
 import sys
 import os
 import codecs
+
+def reformat_code(code):
+    code = str(code)  # for comp
+    code = code.replace(' ', '')
+    if len(code) == 6:  # 3字词
+        newcode = code[0] + code[2] + code[-2:]
+    if len(code) >= 8:  # 四字及以上
+        newcode = code[0] + code[2] + code[4] + code[-2]
+    return newcode
 
 try:
     home = os.path.expanduser("~")
@@ -19,7 +29,7 @@ except Exception as e:
     sys.exit()
 
 gap_space = False  # 字字之间是否有空格
-is_workflow_mode = False
+is_workflow_mode = True
 
 Initials_translation_table = {
     u'zh': 'v',
@@ -99,6 +109,8 @@ if code is None:
         res += final if final not in Finals_translation_table.keys(
         ) else Finals_translation_table[final]
         res += " " if gap_space is True else ""
+    if IsCodeReformating is True:
+        res = reformat_code(res)
 
 line = word.decode('utf-8') + "	" + res.decode('utf-8') + \
     (("	" + str(freq)) if freq != None else "") + '\n'
