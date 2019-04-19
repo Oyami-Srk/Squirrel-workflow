@@ -4,7 +4,7 @@
 
 ![Alfrime](alfrime.png)
 
-图标来自[la rime](https://github.com/rime/librime)以及[Alfred](https://www.alfredapp.com)
+图标来自[la rime](https://github.com/rime/librime)以及[Alfred](https://www.alfredapp.com)
 脚本依赖于[pypinyin](https://github.com/mozillazg/python-pinyin)
 
 Rime tool for Alfred
@@ -32,7 +32,7 @@ Rime tool for Alfred
 `sudo /usr/bin/python -m pip install pypinyin`
 
 
-本脚本应用于**自然码**，通过*极少的*修改也可作用于其他双拼或者全拼方案
+本脚本应用于**自然码**，通过*极少的*修改也可作用于其他双拼或者全拼方案
 
 默认的`gap_space`是`False`，意味着每个字之间的拼音码是没有空格的
 
@@ -42,6 +42,18 @@ Rime tool for Alfred
 
 例：`gap_space`为`True`  -> 北京 bz jy
 
+同上，默认的`IsCodeReformating`是`False`，意味着不会自动转码三字及以上的词。
+
+比如说“我爱你”在默认状态下输出的码是“woaini”，但开启此选项后会转码为“wani”
+
+取首字和第二字的声母加上末字的声母和韵母。
+
+四字及以上的词规则是取首三字的声母和末字的声母，比如说：
+
+“生生不息” -> “uubx”
+
+“床前明月光疑是地上霜” -> “iqmu”
+
 
 工作流变量中的`AutoReDepoly`为`True`时会**自动**在添加完自定义程序后重新部署
 
@@ -49,9 +61,9 @@ Rime tool for Alfred
 ---
 ### Usage
 
-导入，使用，一气呵成
+导入，使用，一气呵成
 
-`rime-add-custom.py`的使用方法与workflow相同，可以在终端中执行，若想贡献此仓库，请提交代码到`rime-add-custom.py`
+`rime-add-custom.py`的使用方法与workflow相同，可以在终端中执行，若想贡献此仓库，请提交代码到`rime-add-custom.py`
 
 
 衷心感谢您的使用
