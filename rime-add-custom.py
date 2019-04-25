@@ -12,6 +12,7 @@ import os
 import codecs
 
 def reformat_code(code):
+    newcode = code
     code = str(code)  # for comp
     code = code.replace(' ', '')
     if len(code) == 6:  # 3字词
