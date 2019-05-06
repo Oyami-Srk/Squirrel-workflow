@@ -67,5 +67,14 @@ Rime tool for Alfred
 
 `rime-add-custom.py`的使用方法与workflow相同，可以在终端中执行，若想贡献此仓库，请提交代码到`rime-add-custom.py`
 
+### 修改配置
+
+首先打开Alfred Preferences，然后在Workflows中点击Rime。
+随后会出现工作流的流程图，然后在流程图的那个深色区域的右上角，有四个按钮。
+其中第二个是“【x】”状。点击这第二个按钮，双击右侧任何你想调整的变量后面的False或者True，使其成为可编辑状态，输入True或者False，并点击右下角的Save，将其保存。
+注意一定要输入True或者False，大小写敏感。
+
+另外若您使用的是其他双拼方案，请同时更改两个标记为蓝色的脚本里面的对应字典，两者内容相同，可以复制。
+
 
 衷心感谢您的使用
